@@ -1,0 +1,107 @@
+//
+//  RoomViewController.swift
+//  NexSeedChat
+//
+//  Created by yonekan on 2019/12/10.
+//  Copyright © 2019 yonekan. All rights reserved.
+//
+
+import UIKit
+import Firebase
+import RevealingSplashView
+
+class RoomViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var tableView: UITableView!
+    
+    // テーブルに表示する全データを持つ配列
+    var rooms: [Room] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.dataSource = self
+        tableView.delegate = self
+        
+        // Firestoreに接続
+        let db = Firestore.firestore()
+        
+        // roomsコレクションを監視
+        db.collection("rooms").addSnapshotListener {
+            (querySnapShot, error) in
+            
+            guard let documents = querySnapShot?.documents else {
+                // ドキュメントがnilの場合、処理を中断
+                return
+            }
+            
+            var results: [Room] = []
+            
+            for document in documents {
+                let name = document.get("name") as! String
+                let id = document.documentID
+                let room = Room(documentId: id, name: name)
+                results.append(room)
+            }
+            
+            self.rooms = results
+        }
+    }
+
+    // 追加ボタンが押された時の処理
+    @IBAction func didClickButton(_ sender: UIButton) {
+        
+        // 名前が空文字かチェック
+        if textField.text!.isEmpty {
+            // 空文字の場合
+            return // 処理を中断
+        }
+        
+        // Firestoreに接続
+        let db = Firestore.firestore()
+        
+        // roomsコレクションに、新しいドキュメントを追加
+        db.collection("rooms").addDocument(data: [
+            "name": textField.text!,
+            "createdAt": FieldValue.serverTimestamp()
+        ]) {error in
+            if let err = error {
+                // エラーがある場合
+                print(err.localizedDescription)
+            }
+        }
+        
+        // テキストフィールドを空にする
+        textField.text = ""
+    }
+    
+}
+
+
+extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return rooms.count
+        
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell =
+            tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        
+        let room = rooms[indexPath.row]
+        
+        cell.textLabel?.text = room.name
+        
+        return cell
+    }
+    
+}
