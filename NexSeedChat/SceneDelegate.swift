@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -19,14 +20,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        // Main.storyboardを取得
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-        // storyboardから、名前がHomeVCの画面を取得
-        let HomeVC = storyboard.instantiateViewController(identifier: "HomeVC")
-        
-        // 最初の画面を取得したHomeVCに置き換える
-        self.window?.rootViewController = HomeVC
+        if Auth.auth().currentUser != nil {
+            // すでにログインしている場合
+            
+            // Main.storyboardを取得
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            // storyboardから、名前がHomeVCの画面を取得
+            let HomeVC = storyboard.instantiateViewController(identifier: "HomeVC")
+            
+            // 最初の画面を取得したHomeVCに置き換える
+            self.window?.rootViewController = HomeVC
+        }
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

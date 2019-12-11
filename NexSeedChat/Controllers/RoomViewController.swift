@@ -29,6 +29,8 @@ class RoomViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        showSpalshView()
+        
         // Firestoreに接続
         let db = Firestore.firestore()
         
@@ -79,6 +81,27 @@ class RoomViewController: UIViewController {
         
         // テキストフィールドを空にする
         textField.text = ""
+    }
+    
+    // スプラッシュ画面を表示するメソッド
+    func showSpalshView() {
+        
+        // スプラッシュ画面の作成
+        let splashView = RevealingSplashView(
+            iconImage: UIImage(named: "seedkun")!,
+            iconInitialSize: CGSize(width: 250, height: 250),
+            backgroundColor:
+            UIColor(red: 79/255, green: 171/255, blue: 255/255, alpha: 1))
+        
+        // スプラッシュのアニメーション設定
+        splashView.animationType = .swingAndZoomOut
+        // 画面に表示
+        self.tabBarController?.view.addSubview(splashView)
+        // アニメーション開始
+        splashView.startAnimation {
+            // アニメーション終了時の処理
+        }
+        
     }
     
 }
