@@ -9,11 +9,14 @@
 /* Begin PBXBuildFile section */
 		0C095FE1239E28DA00791DF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FE0239E28DA00791DF5 /* AppDelegate.swift */; };
 		0C095FE3239E28DA00791DF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FE2239E28DA00791DF5 /* SceneDelegate.swift */; };
-		0C095FE5239E28DA00791DF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FE4239E28DA00791DF5 /* ViewController.swift */; };
 		0C095FE8239E28DA00791DF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C095FE6239E28DA00791DF5 /* Main.storyboard */; };
 		0C095FEA239E28DF00791DF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C095FE9239E28DF00791DF5 /* Assets.xcassets */; };
 		0C095FED239E28DF00791DF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C095FEB239E28DF00791DF5 /* LaunchScreen.storyboard */; };
 		0C095FF5239E2B3200791DF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C095FF4239E2B3200791DF5 /* GoogleService-Info.plist */; };
+		0C095FF8239E30F100791DF5 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FF7239E30F100791DF5 /* SplashViewController.swift */; };
+		0C095FFA239F65A300791DF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FF9239F65A300791DF5 /* LoginViewController.swift */; };
+		0C095FFC239F733100791DF5 /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FFB239F733100791DF5 /* RoomViewController.swift */; };
+		0C095FFF239F7B5100791DF5 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C095FFE239F7B5100791DF5 /* Room.swift */; };
 		F1B4FF3EC521A2EA6862793D /* Pods_NexSeedChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279FFF44DBEAD3E7D90429D7 /* Pods_NexSeedChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,12 +24,15 @@
 		0C095FDD239E28DA00791DF5 /* NexSeedChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NexSeedChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C095FE0239E28DA00791DF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C095FE2239E28DA00791DF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C095FE4239E28DA00791DF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0C095FE7239E28DA00791DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0C095FE9239E28DF00791DF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C095FEC239E28DF00791DF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C095FEE239E28DF00791DF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0C095FF4239E2B3200791DF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0C095FF7239E30F100791DF5 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		0C095FF9239F65A300791DF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		0C095FFB239F733100791DF5 /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		0C095FFE239F7B5100791DF5 /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		279FFF44DBEAD3E7D90429D7 /* Pods_NexSeedChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexSeedChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F070D8F836AC8B5A49922F /* Pods-NexSeedChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexSeedChat.release.xcconfig"; path = "Target Support Files/Pods-NexSeedChat/Pods-NexSeedChat.release.xcconfig"; sourceTree = "<group>"; };
 		7BF3A9D461018603AB7EF8F2 /* Pods-NexSeedChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexSeedChat.debug.xcconfig"; path = "Target Support Files/Pods-NexSeedChat/Pods-NexSeedChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -65,9 +71,10 @@
 		0C095FDF239E28DA00791DF5 /* NexSeedChat */ = {
 			isa = PBXGroup;
 			children = (
+				0C095FFD239F7AFE00791DF5 /* Objects */,
+				0C095FF6239E30AD00791DF5 /* Controllers */,
 				0C095FE0239E28DA00791DF5 /* AppDelegate.swift */,
 				0C095FE2239E28DA00791DF5 /* SceneDelegate.swift */,
-				0C095FE4239E28DA00791DF5 /* ViewController.swift */,
 				0C095FE6239E28DA00791DF5 /* Main.storyboard */,
 				0C095FE9239E28DF00791DF5 /* Assets.xcassets */,
 				0C095FEB239E28DF00791DF5 /* LaunchScreen.storyboard */,
@@ -75,6 +82,24 @@
 				0C095FF4239E2B3200791DF5 /* GoogleService-Info.plist */,
 			);
 			path = NexSeedChat;
+			sourceTree = "<group>";
+		};
+		0C095FF6239E30AD00791DF5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0C095FF7239E30F100791DF5 /* SplashViewController.swift */,
+				0C095FF9239F65A300791DF5 /* LoginViewController.swift */,
+				0C095FFB239F733100791DF5 /* RoomViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		0C095FFD239F7AFE00791DF5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				0C095FFE239F7B5100791DF5 /* Room.swift */,
+			);
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		AFED5FCE2FB8198691FBF4C5 /* Frameworks */ = {
@@ -228,8 +253,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C095FE5239E28DA00791DF5 /* ViewController.swift in Sources */,
+				0C095FFA239F65A300791DF5 /* LoginViewController.swift in Sources */,
+				0C095FF8239E30F100791DF5 /* SplashViewController.swift in Sources */,
+				0C095FFF239F7B5100791DF5 /* Room.swift in Sources */,
 				0C095FE1239E28DA00791DF5 /* AppDelegate.swift in Sources */,
+				0C095FFC239F733100791DF5 /* RoomViewController.swift in Sources */,
 				0C095FE3239E28DA00791DF5 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
