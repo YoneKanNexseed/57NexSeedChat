@@ -100,7 +100,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="NDm-tG-id2">
                         <nil key="title"/>
-                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2uS-65-1CQ">
+                        <textField key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="2uS-65-1CQ">
                             <rect key="frame" x="12" y="5" width="284" height="34"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -120,17 +120,17 @@
                     <connections>
                         <outlet property="tableView" destination="3au-zQ-F83" id="aNp-ru-WXt"/>
                         <outlet property="textField" destination="2uS-65-1CQ" id="NAY-ug-8fR"/>
-                        <segue destination="YeS-kZ-3m1" kind="show" id="xp9-Rh-tHI"/>
+                        <segue destination="YeS-kZ-3m1" kind="show" identifier="toRoom" id="xp9-Rh-tHI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a4a-P8-f1g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5139.130434782609" y="-704.46428571428567"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat View Controller-->
         <scene sceneID="kA4-MH-Ksc">
             <objects>
-                <viewController id="YeS-kZ-3m1" sceneMemberID="viewController">
+                <viewController id="YeS-kZ-3m1" customClass="ChatViewController" customModule="NexSeedChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBd-mz-dSg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -194,6 +194,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="fSe-ag-TVH"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Cy2-1u-La4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>

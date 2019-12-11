@@ -127,4 +127,25 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    // セルがクリックされた時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 今回クリックされた部屋情報を取得
+        let room = rooms[indexPath.row]
+        
+        // チャット画面に遷移
+        performSegue(
+            withIdentifier: "toRoom",
+            sender: room.documentId)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toRoom" {
+            let ChatVC = segue.destination as! ChatViewController
+            ChatVC.documentId = sender as! String
+        }
+        
+    }
+    
 }
