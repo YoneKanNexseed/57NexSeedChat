@@ -11,7 +11,7 @@ import Firebase
 import RevealingSplashView
 
 class RoomViewController: UIViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,8 +29,14 @@ class RoomViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        showSpalshView()
-        
+        // スプラッシュを表示するか判断する
+        if didDisplaySplashFlg == false {
+            // まだスプラッシュを表示していなかったら
+            showSpalshView()
+            
+            didDisplaySplashFlg = true
+        }
+
         // Firestoreに接続
         let db = Firestore.firestore()
         
@@ -125,6 +131,27 @@ extension RoomViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = room.name
         
         return cell
+    }
+    
+    // セルがクリックされた時の処理
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 今回クリックされた部屋情報を取得
+        let room = rooms[indexPath.row]
+        
+        // チャット画面に遷移
+        performSegue(
+            withIdentifier: "toRoom",
+            sender: room.documentId)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "toRoom" {
+            let ChatVC = segue.destination as! ChatViewController
+            ChatVC.documentId = sender as! String
+        }
+        
     }
     
 }
