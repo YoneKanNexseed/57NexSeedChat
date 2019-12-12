@@ -11,7 +11,7 @@ import Firebase
 import RevealingSplashView
 
 class RoomViewController: UIViewController {
-
+    
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
@@ -29,8 +29,14 @@ class RoomViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        showSpalshView()
-        
+        // スプラッシュを表示するか判断する
+        if didDisplaySplashFlg == false {
+            // まだスプラッシュを表示していなかったら
+            showSpalshView()
+            
+            didDisplaySplashFlg = true
+        }
+
         // Firestoreに接続
         let db = Firestore.firestore()
         

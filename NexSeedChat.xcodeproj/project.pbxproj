@@ -20,6 +20,7 @@
 		0CB9371623A0B92800E7B78B /* ChatUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9371523A0B92800E7B78B /* ChatUser.swift */; };
 		0CB9371823A0B93100E7B78B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9371723A0B93100E7B78B /* Message.swift */; };
 		0CB9371A23A0B96600E7B78B /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9371923A0B96600E7B78B /* ChatViewController.swift */; };
+		0CB9371E23A2135800E7B78B /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CB9371D23A2135800E7B78B /* SettingViewController.swift */; };
 		F1B4FF3EC521A2EA6862793D /* Pods_NexSeedChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 279FFF44DBEAD3E7D90429D7 /* Pods_NexSeedChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +40,7 @@
 		0CB9371523A0B92800E7B78B /* ChatUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatUser.swift; sourceTree = "<group>"; };
 		0CB9371723A0B93100E7B78B /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		0CB9371923A0B96600E7B78B /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		0CB9371D23A2135800E7B78B /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		279FFF44DBEAD3E7D90429D7 /* Pods_NexSeedChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NexSeedChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40F070D8F836AC8B5A49922F /* Pods-NexSeedChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexSeedChat.release.xcconfig"; path = "Target Support Files/Pods-NexSeedChat/Pods-NexSeedChat.release.xcconfig"; sourceTree = "<group>"; };
 		7BF3A9D461018603AB7EF8F2 /* Pods-NexSeedChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NexSeedChat.debug.xcconfig"; path = "Target Support Files/Pods-NexSeedChat/Pods-NexSeedChat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				0C095FF9239F65A300791DF5 /* LoginViewController.swift */,
 				0C095FFB239F733100791DF5 /* RoomViewController.swift */,
 				0CB9371923A0B96600E7B78B /* ChatViewController.swift */,
+				0CB9371D23A2135800E7B78B /* SettingViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -267,6 +270,7 @@
 				0C095FF8239E30F100791DF5 /* SplashViewController.swift in Sources */,
 				0C095FFF239F7B5100791DF5 /* Room.swift in Sources */,
 				0C095FE1239E28DA00791DF5 /* AppDelegate.swift in Sources */,
+				0CB9371E23A2135800E7B78B /* SettingViewController.swift in Sources */,
 				0CB9371823A0B93100E7B78B /* Message.swift in Sources */,
 				0C095FFC239F733100791DF5 /* RoomViewController.swift in Sources */,
 				0CB9371A23A0B96600E7B78B /* ChatViewController.swift in Sources */,
@@ -418,6 +422,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DB4CQZK65;
 				INFOPLIST_FILE = NexSeedChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +442,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8DB4CQZK65;
 				INFOPLIST_FILE = NexSeedChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

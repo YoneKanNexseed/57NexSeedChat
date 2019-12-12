@@ -116,6 +116,61 @@ extension ChatViewController: MessagesLayoutDelegate {
 
 extension ChatViewController: MessagesDisplayDelegate {
     
+    // アバター画像の設定
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+        
+        // メッセージの取得
+        let message = messages[indexPath.section]
+        
+        // このメッセージの送信者を取得
+        let user = message.sender as! ChatUser
+        
+        // 文字のURLをURL型に変換
+        let url = URL(string: user.photoUrl)
+        
+        // URLを元に画像データを取得
+        let data = try! Data(contentsOf: url!)
+        
+        // 取得したデータを元に、ImageViewを作成
+        let image = UIImage(data: data)
+        
+        // ImageViewと名前を元にアバターアイコンを作成
+        let avatar = Avatar(image: image, initials: user.displayName)
+        
+        // 完成したアイコンを配置
+        avatarView.set(avatar: avatar)
+    }
+    
+    
+    // 背景色の設定
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        
+        if isFromCurrentSender(message: message) {
+            // 自分のメッセージの場合
+            return UIColor(
+                red: 100/255, green: 63/255,
+                blue: 222/255, alpha: 1)
+        } else {
+            // 他人のメッセージの場合
+            return UIColor(
+                red: 230/255, green: 230/255,
+                blue: 230/255, alpha: 1)
+        }
+        
+    }
+    
+    func messageStyle(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> MessageStyle {
+        
+        if isFromCurrentSender(message: message) {
+            // 自分のメッセージの場合
+            return .bubbleTail(.bottomRight, .curved)
+        } else {
+            // 他人のメッセージの場合
+            return .bubbleTail(.bottomLeft, .curved)
+        }
+    }
+    
+    
 }
 
 extension ChatViewController: MessageCellDelegate {
