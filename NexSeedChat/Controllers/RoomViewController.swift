@@ -9,12 +9,15 @@
 import UIKit
 import Firebase
 import RevealingSplashView
+import GoogleMobileAds
 
 class RoomViewController: UIViewController {
     
     @IBOutlet weak var textField: UITextField!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var bannerView: GADBannerView!
     
     // テーブルに表示する全データを持つ配列
     var rooms: [Room] = [] {
@@ -28,6 +31,12 @@ class RoomViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Admobの設定
+        bannerView.adUnitID = "ca-app-pub-3940256099942544/2934735716"
+        
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
         
         // スプラッシュを表示するか判断する
         if didDisplaySplashFlg == false {

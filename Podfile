@@ -13,5 +13,6 @@ target 'NexSeedChat' do
   pod 'Firebase/Firestore'
   pod 'RevealingSplashView'
   pod 'MessageKit', :git => 'https://github.com/MessageKit/MessageKit.git', :tag => '3.0.0-swift5'
+  pod 'Firebase/AdMob'
 
 end

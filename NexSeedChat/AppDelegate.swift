@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import GoogleMobileAds
 
 // スプラッシュを表示したかどうか判断するフラグ
 // true: 表示した、false：表示してない
@@ -22,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         GIDSignIn.sharedInstance()?.clientID =
             FirebaseApp.app()?.options.clientID
+        
+        // Admobの設定
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
         
         // Main.storyboardを取得
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
